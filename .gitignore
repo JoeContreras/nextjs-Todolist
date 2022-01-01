@@ -33,3 +33,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/nextjs-crud.iml
+/.idea/prettier.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
