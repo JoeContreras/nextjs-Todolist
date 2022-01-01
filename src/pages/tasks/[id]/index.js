@@ -11,7 +11,7 @@ const TaskDetail = ({ task, error }) => {
   const deleteTask = async () => {
     const { id } = query;
     try {
-      await fetch(`http://localhost:3000/api/tasks/${id}`, {
+      await fetch(`https://nextjs-todolist-five.vercel.app/api/tasks/${id}`, {
         method: "DELETE",
       });
     } catch (e) {
@@ -69,7 +69,9 @@ const TaskDetail = ({ task, error }) => {
 export default TaskDetail;
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`http://localhost:3000/api/tasks/${id}`);
+  const res = await fetch(
+    `https://nextjs-todolist-five.vercel.app/api/tasks/${id}`
+  );
 
   if (res.status === 200) {
     const task = await res.json();

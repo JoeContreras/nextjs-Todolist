@@ -58,7 +58,7 @@ export default function HomePage({ tasks }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/tasks");
+  const res = await fetch("https://nextjs-todolist-five.vercel.app/api/tasks");
   const tasks = await res.json();
 
   return {

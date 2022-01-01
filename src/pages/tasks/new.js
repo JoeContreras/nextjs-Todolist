@@ -35,7 +35,7 @@ const TaskFormPage = () => {
 
   const createTask = async () => {
     try {
-      await fetch("http://localhost:3000/api/tasks", {
+      await fetch("https://nextjs-todolist-five.vercel.app/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,13 +49,16 @@ const TaskFormPage = () => {
 
   const updateTask = async () => {
     try {
-      await fetch(`http://localhost:3000/api/tasks/${query.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newTask),
-      });
+      await fetch(
+        `https://nextjs-todolist-five.vercel.app/api/tasks/${query.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newTask),
+        }
+      );
     } catch (e) {
       console.error(e);
     }
@@ -66,7 +69,9 @@ const TaskFormPage = () => {
 
   const getTask = async () => {
     try {
-      const result = await fetch("http://localhost:3000/api/tasks/" + query.id);
+      const result = await fetch(
+        "https://nextjs-todolist-five.vercel.app/api/tasks/" + query.id
+      );
       const data = await result.json();
       setNewTask({ title: data.title, description: data.description });
     } catch (e) {
